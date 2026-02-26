@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: quoteapp-postgres
+    environment:
+      POSTGRES_USER: quoteuser
+      POSTGRES_PASSWORD: quotepass
+      POSTGRES_DB: quoteapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
